@@ -1,0 +1,50 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "sourceMap": true,
+    "module": "es2015",
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "declaration": false,
+    "outDir": "./dist/out-tsc",
+    "target": "es5",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "scheduler": [
+        "dist/scheduler"
+      ],
+      "task-app": [
+        "dist/task-app"
+      ],
+      "fastCodeCore/*": [
+        "dist/fast-code-core/*"
+      ],
+      "ip-email-builder": [
+        "dist/ip-email-builder"
+      ],
+      "task-app/*": [
+        "dist/task-app/*"
+      ],
+      "scheduler/*": [
+        "dist/scheduler/*"
+      ],
+      "ip-email-builder/*": [
+        "dist/ip-email-builder/*"
+      ],
+      "fastCodeCore": [
+        "dist/fast-code-core"
+      ]
+    },
+    "moduleResolution": "node"
+  }
+}
