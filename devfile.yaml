@@ -1,0 +1,47 @@
+specVersion: 0.0.1
+
+name: chectl
+
+projects:
+
+  - name: chectl
+    source:
+      type: git
+      location: 'https://github.com/che-incubator/chectl.git'
+
+components:
+
+  - alias: git
+    type: dockerimage
+    image: sunix/git-devtools
+    mountSources: true
+    memoryLimit: 256M
+
+  - alias: dev
+    type: dockerimage
+    image: eclipse/che-theia-dev:next
+    mountSources: true
+    memoryLimit: 1G
+
+  - id: redhat/vscode-yaml/latest
+    type: chePlugin
+
+  - id: che-incubator/typescript/latest
+    type: chePlugin
+    memoryLimit: 1G
+
+commands:
+
+  - name: yarn
+    actions:
+      - type: exec
+        component: dev
+        command: yarn
+        workdir: /projects/chectl
+
+  - name: yarn test
+    actions:
+      - type: exec
+        component: dev
+        command: yarn test
+        workdir: /projects/chectl
